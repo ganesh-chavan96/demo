@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Website</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 10px;
+        }
+
+        .item {
+            padding: 30px;
+            text-align: center;
+        }
+
+        #item1 {
+            background-color: aquamarine;
+            grid-column: 1 / 3;
+        }
+
+        #item2 {
+            background-color: lightblue;
+        }
+
+        #item3 {
+            background-color: lightyellow;
+        }
+
+        #item4 {
+            background-color: lightgreen;
+            grid-column: 1 / 3;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="item" id="item1">
+            <h2>My Website</h2>
+            <p>Home | About | Contact</p>
+        </div>
+
+        <div class="item" id="item2">
+            <h3>Sidebar</h3>
+            <p>News</p>
+            <p>Categories</p>
+        </div>
+
+        <div class="item" id="item3">
+            <h3>Main Content</h3>
+            <p>Welcome to my website!</p>
+        </div>
+
+        <div class="item" id="item4">
+            <p>Footer - Copyright 2026</p>
+        </div>
+
+    </div>
+
+</body>
+</html>
