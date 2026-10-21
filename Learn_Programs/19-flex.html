@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .container {
+            height: 500px;
+            width: 100%;
+
+            border: 2px solid red;
+            display: flex;
+            /* flex-direction: row; */
+            /* flex-wrap: wrap-reverse; */
+
+            flex-flow: row wrap-reverse;
+
+            /* justify-content: center; */
+            /* justify-content: space-evenly; */
+            justify-content: space-evenly;
+
+            align-items: center;
+
+
+
+        }
+
+        .item {
+            height: 200px;
+            width: 200px;
+            background-color: blanchedalmond;
+            border: 2px solid gray;
+            margin: 10px;
+            padding: 75px;
+
+
+        }
+
+        /* #item2{
+            flex-grow: 5;
+            flex-shrink: 3;
+        } */
+         #item1{
+            transition-duration: 1s;
+            /* transition-property: all; */
+            transition-timing-function: ease-in;
+         }
+
+        #item1:hover {
+            background-color: lightskyblue;
+            border: 5px solid green;
+        }
+        #item1:active{
+background-color: black;
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="item" id="item1">1st Block</div>
+        <div class="item" id="item2">2nd Block</div>
+        <div class="item" id="item3">3rd Block</div>
+        <div class="item" id="item4">4th Block</div>
+        <div class="item" id="item5">5th Block</div>
+        <div class="item" id="item6">6th Block</div>
+    </div>
+</body>
+
+</html>
