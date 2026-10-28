@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        var students = [
+            { name: "Rahul", marks: 35 },
+            { name: "Amit", marks: 75 },
+            { name: "Sneha", marks: 38 },
+            { name: "Priya", marks: 60 }
+        ];
+
+        document.write(students);
+        document.write("<br>");
+
+        for (let k in students) {
+            document.write(k+" : "+ students[k].name+" : "+students[k].marks );
+        }
+        document.write("<br>");
+
+        var result = students.filter((m)=>m.marks>=40?true:false);
+                document.write("<br>");
+        document.write("<br>");
+
+        document.write("=======================  Marks Greater Than 40 =================="); 
+                document.write("<br>");
+
+        for(let k in result)
+        {
+            document.write(k+" : "+ result[k].name+" : "+result[k].marks+"\n")
+        }
+        console.log(result);
+    </script>
+
+</body>
+
+</html>

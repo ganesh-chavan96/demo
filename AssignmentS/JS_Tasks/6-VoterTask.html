@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    </he <body>
+    <h2>Filter Eligible Voters (Age 18+)</h2>
+
+
+    <script>
+        var citizens = [
+            { name: "Aarav", age: 20 },
+            { name: "Isha", age: 15 },
+            { name: "Kabir", age: 34 },
+            { name: "Riya", age: 17 },
+            { name: "Arjun", age: 18 }
+        ];
+
+        var result = citizens.filter((n) => n.age >= 18 ? document.write(n.name + " : is eligible for vote.<br>") : document.write(n.name + " : is not eligible for vote!!!<br>") );
+
+        // for (k in citizens) {
+        //     document.write()
+        // }
+
+    </script>
+    </body>
+
+</html>

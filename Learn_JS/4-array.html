@@ -91,6 +91,14 @@
         document.write("<br><br>")
         document.write(x);
 
+        document.write("<hr>");
+
+        var emp = ["Ajay", "Akshay", "Karan", "Kunal", "Rahul"];
+        document.write("List Of Emp : "+ emp + " <br> ")
+
+        var result = emp.filter(name => name.startsWith("A"));
+        document.write("Names Start With \"A\" : "+result);
+
 
     </script>
 </body>
