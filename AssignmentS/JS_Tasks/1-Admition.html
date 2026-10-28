@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admition</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <style>
+        body{
+            padding: 20px;
+        }
+        label{
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 class="btn btn-secondary m-1">All Fields Are Compulsory</h1>
+    
+    <br><br>
+
+    <label for="math">Enter Math Marks : &nbsp;</label>
+    <input type="number" id="math" required class="btn btn-primary m-1"> <br /><br />
+
+    <label for="physics">Enter Physics Marks : &nbsp;</label>
+    <input type="number" id="physics" required class="btn btn-primary m-1"> <br /><br />
+
+    <label for="comp">Enter Comp Marks : &nbsp;</label>
+    <input type="number" id="comp" required class="btn btn-primary m-1"> <br /><br />
+
+    <button onclick="get()" class="btn btn-success m-1">Submit</button>
+
+    <p id="result"></p>
+
+
+
+    <script>
+        function get() {
+            let math = Number(document.getElementById("math").value);
+            let physics = Number(document.getElementById("physics").value);
+            let comp = Number(document.getElementById("comp").value);
+
+            let avg = (math + physics + comp) / 3;
+
+            // console.log(typeof avg);
+
+            let result = document.getElementById("result");
+
+            if(avg < 0 || avg > 100){
+                let span = document.createElement('span');
+                span.textContent = "\n Invalid Marks"
+
+                result.appendChild(span);
+            }
+            else if(avg <= 34 && avg >= 0) {
+
+                let span = document.createElement('span');
+                span.textContent = "\nfail"
+
+                result.appendChild(span);
+
+            }
+            else if (avg >= 50){
+                result.innerText = "Math : " + math + "\nPhysics : " + physics + "\nComputer : " + comp + "\n\nAvarage : " + avg;
+                let span = document.createElement('span');
+                span.innerHTML = "<br> <br> Student is eligible for Admition..."
+
+                result.appendChild(span);
+            }
+        }
+    </script>
+</body>
+
+</html>

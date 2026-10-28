@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <style>
+        body {
+            padding: 20px;
+        }
+
+        label {
+            background-color: rgb(246, 230, 198);
+        }
+
+        input {
+            border: 2px solid red
+        }
+    </style>
+</head>
+
+<body>
+    <label for="unm" class="p-2">Enter User Name : </label>
+    <input type="text" id="unm" required class="btn btn-light border"> <br><br>
+
+    <label for="unm" class="p-2">Enter Password : </label>
+    <input type="password" id="pass" required class="btn btn-light border "> <br><br>
+
+    <button onclick="validate()" class="btn btn-success ">Login</button>
+
+    <p id="disp"></p>
+
+    <script>
+        const vuser = "admin";
+        const vpass = "admin123";
+
+        function validate() {
+
+            
+            let unm = document.getElementById("unm").value;
+            let pass = document.getElementById("pass").value;
+            let disp = document.getElementById("disp");
+            
+            if (unm === vuser && pass === vpass) {
+                disp.innerHTML =
+            "Valid Username and Password <br> Login Successfully...";
+            }
+            else{
+                disp.innerHTML =
+            "Invalid Username and Password <br> Try with valid username and password";
+            }
+        }
+
+    </script>
+</body>
+
+</html>

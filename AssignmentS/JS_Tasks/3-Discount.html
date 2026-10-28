@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discount Calculator</title>
+
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css">
+
+    <style>
+        body {
+            padding: 30px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+
+        <h3 class="text-primary">Discount Calculator</h3>
+        
+
+        <label for="amount">Enter Shopping Amount :</label>
+        <input type="number" id="amount" min="0" required>
+
+        <br>
+
+        <button onclick="calculate()" class="btn btn-success ">Calculate Discount</button>
+
+    
+
+        <p id="discount"></p>
+        <p id="final"></p>
+    
+
+    <script>
+        function calculate() {
+            let amount = Number(document.getElementById("amount").value);
+            let discount = 0;
+
+            if (document.getElementById("amount").value === "" || amount < 0) {
+                alert("Please enter a valid shopping amount.");
+                return;
+            }
+
+            if (amount >= 5000) {
+                discount = amount * 0.20;
+            }
+            else if (amount >= 2000) {
+                discount = amount * 0.10;
+            }
+            else {
+                discount = 0;
+            }
+
+            let payable = amount - discount;
+
+            document.getElementById("discount").innerHTML =
+                "Discount Amount: ₹" + discount;
+
+            document.getElementById("final").innerHTML =
+                "Final Payable Amount: ₹" + payable;
+        }
+    </script>
+
+</body>
+</html>

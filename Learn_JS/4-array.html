@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        var x = [1, "ganesh", true, 24.5675, "", ''];
+        for (i = 0; i < x.length; i++) {
+            document.write(x[i] + "<br>");
+        }
+
+        var x = [10, "viraj", 7980, 8729.89743, false];
+        document.write("<hr> <ul>")
+        for (i = 0; i < x.length; i++) {
+
+            document.write("<li>" + x[i] + "</li>");
+        }
+        document.write("</ul>");
+
+        var x = new Array();
+        x[0] = 10;
+        x[1] = "karan";
+        x[2] = 85;
+        x[3] = 8974.97443;
+        x[4] = true;
+
+        document.write("<hr> <ul>")
+        for (i = 0; i < x.length; i++) {
+
+            if (i == 3) {
+                document.write("<li>" + x[i].toFixed(2) + "</li>")
+                continue;
+            }
+            document.write("<li>" + x[i] + "</li>");
+        }
+        document.write("</ul>");
+
+        document.write("<hr> <ul>")
+
+        // var x = new Array(4);
+        // for (var a = 0; a < 4; a++) {
+        //     x[a] = prompt("enter a value: ");
+        // }
+
+        // document.write("<hr> <ul>")
+        // for (i = 0; i < x.length; i++) {
+
+        //     document.write("<li>" + x[i] + " : " + typeof x[i] + "</li>");
+        // }
+        // document.write("</ul> <hr>");
+
+
+        var x = [
+            [1,"ganesh", true, 8987778729],
+            [2,"viraj", false, 9823892898],
+            [3,"karan", false, 7125398981],
+            [4,"kartik", true, 8952389309],
+            [5,"yogesh", true, 9877429790]  
+        ];
+
+        document.write("<table border='2' cellspacing='0'>")
+        for(var r=0;r<x.length;r++){
+            document.write("<tr>");
+            for(var c = 0; c < x[r].length; c++){
+                document.write("<td> "+x[r][c]+" </td>");
+            }
+            document.write("</tr>");
+        }
+        document.write("</table> <hr>");
+
+
+        var x = ["aaa", "bbb", "ccc", "ddd"];
+
+        document.write(x);
+        document.write("<br>");
+        
+        delete x[0]; //  undefine
+        document.write(x[0]);
+        x.sort(); // give sorted o/p
+        x.reverse(); // reverse array
+        x.push("mac"); // add elements at last 
+        x.pop(); // delete the last element
+        x.shift(); //delete the first element
+        x.unshift("mac"); // add element at first position
+        document.write("<br><br>")
+        document.write(x);
+
+
+    </script>
+</body>
+
+</html>
