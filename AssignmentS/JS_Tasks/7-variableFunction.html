@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        ((x,y)=>{
+            document.write(x+y);
+        })(10,20);
+
+        let f = (user)=>{
+            document.write(user);
+            return 100;
+        }
+
+       f('ganesh');
+       document.write(f('ganesh')+"<br>");
+
+       let student={
+        name:'ganesh',
+        city:'pune',
+        getName:function (){
+            document.write("Hi my Name is : "+this.name);
+        }
+       }
+    //    for( i in student)
+    //    {
+    //     document.write(student[i]);
+    //    }
+    //    document.write(student+"<br>");
+    //    student.getName();
+
+    
+
+        // let r=s(9,20);
+        // document.write(r);
+    </script>
+    
+</body>
+</html>

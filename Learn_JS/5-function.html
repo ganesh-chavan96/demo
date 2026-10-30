@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <script>
+        // simple function with 1 arguments
+        function show(name){
+            return name;
+        }
+
+        var a = show("ganesh");
+        document.write("my name is : "+a);
+        document.write("<br>");
+        document.write("hello ..! "+show("ganesh"))
+
+        function sum(math,phy,comp){
+            return math + phy + comp;
+        }
+
+        function view(sum){
+            document.write("<br>"+sum);
+        }
+        document.write("<br> Percentage : "+((sum(55,77,88)/3)).toFixed(2));
+
+        (function (){document.write('<br>hi')})();
+
+
+    </script>
+    
+</body>
+</html>

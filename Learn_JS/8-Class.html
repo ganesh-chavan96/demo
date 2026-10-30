@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        //Sample class
+        class A {
+            show() {
+                document.write("This is function inside a class");
+            }
+        }
+
+        let ao = new A();
+        ao.show();
+        document.write("<br>")
+        // Same as above
+        let bo = new A();
+        bo.show();
+        document.write("<br>")
+
+        // second class
+        class B {
+            show(a, b) {
+                document.write("sum is  " + (a + b));
+            }
+        }
+
+        let b = new B();
+        b.show(10, 20);
+        document.write("<br>")
+        document.write("<br>")
+
+
+
+        class C {
+            add(x, y) {
+                document.write("sum is  " + (x + y));
+            }
+
+            mult(x, y) {
+                document.write("Mult is  " + (x * y));
+            }
+
+            sub(x, y) {
+                document.write("subtraction is  " + (x - y));
+            }
+        }
+
+        let c= new C();
+        c.add(10,20);
+                document.write("<br>")
+
+        c.mult(10,20);
+                document.write("<br>")
+
+        c.sub(10,20);
+
+    </script>
+</body>
+
+</html>

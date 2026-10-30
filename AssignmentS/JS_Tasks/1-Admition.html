@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -6,13 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admition</title>
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
     <style>
-        body{
+        body {
             padding: 20px;
         }
-        label{
+
+        label {
             background-color: aquamarine;
         }
     </style>
@@ -21,7 +23,9 @@
 <body>
 
     <h1 class="btn btn-secondary m-1">All Fields Are Compulsory</h1>
-    
+
+    <h5>Enter Marks From '0' to '100'.. </h5>
+
     <br><br>
 
     <label for="math">Enter Math Marks : &nbsp;</label>
@@ -45,35 +49,180 @@
             let physics = Number(document.getElementById("physics").value);
             let comp = Number(document.getElementById("comp").value);
 
-            let avg = (math + physics + comp) / 3;
+            let avg = (math + physics + comp) / 300 * 100;
+            // let avg = (math + physics + comp) / 3;
+            let result = document.getElementById("result");
+
+            if (math < 0 || math > 100 ||
+                physics < 0 || physics > 100 ||
+                comp < 0 || comp > 100) {
+                result.innerHTML = "Fail in a Subject";
+            } else {
+
+
+                if (avg < 0 || avg > 100) {
+                    let span = document.createElement('span');
+                    span.textContent = "\n Invalid Marks"
+
+                    result.appendChild(span);
+                }
+                else if (avg <= 34 && avg >= 0) {
+
+                    let span = document.createElement('span');
+                    span.textContent = "\nfail"
+
+                    result.appendChild(span);
+
+                }
+                else if (avg >= 50) {
+                    result.innerText = "Math : " + math + "\nPhysics : " + physics + "\nComputer : " + comp + "\n\nAvarage : " + avg.toFixed(2);
+                    let span = document.createElement('span');
+                    span.innerHTML = "<br> <br> Student is eligible for Admition..."
+
+                    result.appendChild(span);
+                }
+                else {
+                    result.innerText = "Student is not eligible for admission";
+                }
+            }
 
             // console.log(typeof avg);
 
-            let result = document.getElementById("result");
-
-            if(avg < 0 || avg > 100){
-                let span = document.createElement('span');
-                span.textContent = "\n Invalid Marks"
-
-                result.appendChild(span);
-            }
-            else if(avg <= 34 && avg >= 0) {
-
-                let span = document.createElement('span');
-                span.textContent = "\nfail"
-
-                result.appendChild(span);
-
-            }
-            else if (avg >= 50){
-                result.innerText = "Math : " + math + "\nPhysics : " + physics + "\nComputer : " + comp + "\n\nAvarage : " + avg;
-                let span = document.createElement('span');
-                span.innerHTML = "<br> <br> Student is eligible for Admition..."
-
-                result.appendChild(span);
-            }
         }
     </script>
 </body>
 
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admission Eligibility Checker</title>
+
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css">
+
+    <style>
+        body {
+            padding: 20px;
+        }
+
+        label {
+            background-color: aquamarine;
+            padding: 5px;
+        }
+
+        #result {
+            margin-top: 20px;
+            white-space: pre-line;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 class="btn btn-secondary m-1">
+        All Fields Are Compulsory
+    </h1>
+
+    <h5>Enter Marks From 0 to 100.</h5>
+
+    <br>
+
+    <label for="math">Enter Math Marks:</label>
+    <input type="number" id="math" min="0" max="100"
+        required class="form-control mb-3">
+
+    <label for="physics">Enter Physics Marks:</label>
+    <input type="number" id="physics" min="0" max="100"
+        required class="form-control mb-3">
+
+    <label for="comp">Enter Computer Marks:</label>
+    <input type="number" id="comp" min="0" max="100"
+        required class="form-control mb-3">
+
+    <button onclick="get()" class="btn btn-success m-1">
+        Submit
+    </button>
+
+    <p id="result"></p>
+
+    <script>
+        function get() {
+
+            const mathInput = document.getElementById("math");
+            const physicsInput = document.getElementById("physics");
+            const compInput = document.getElementById("comp");
+            const result = document.getElementById("result");
+
+            // Clear previous result
+            result.innerText = "";
+
+            // Check whether all fields are filled
+            if (
+                mathInput.value.trim() === "" ||
+                physicsInput.value.trim() === "" ||
+                compInput.value.trim() === ""
+            ) {
+                result.innerText = "Please fill in all fields.";
+                return;
+            }
+
+            // Convert input values into numbers
+            const math = Number(mathInput.value);
+            const physics = Number(physicsInput.value);
+            const comp = Number(compInput.value);
+
+            // Validate marks
+            if (
+                !Number.isFinite(math) ||
+                !Number.isFinite(physics) ||
+                !Number.isFinite(comp) ||
+                math < 0 || math > 100 ||
+                physics < 0 || physics > 100 ||
+                comp < 0 || comp > 100
+            ) {
+                result.innerText =
+                    "Invalid Marks! Enter marks between 0 and 100.";
+                return;
+            }
+
+            // Calculate average
+            const avg = (math + physics + comp) / 3;
+
+            // Display marks and average
+            result.innerText =
+                "Math: " + math +
+                "\nPhysics: " + physics +
+                "\nComputer: " + comp +
+                "\n\nAverage: " + avg.toFixed(2);
+
+            // Check individual subject marks
+            if (math < 35 || physics < 35 || comp < 35) {
+                result.innerText +=
+                    "\n\nFail in a Subject.\nAdmission not eligible.";
+            }
+
+            // Check admission eligibility
+            else if (avg >= 50) {
+                result.innerText +=
+                    "\n\nStudent is eligible for admission!";
+            }
+
+            // Average is below 50
+            else {
+                result.innerText +=
+                    "\n\nStudent is not eligible for admission.";
+            }
+        }
+    </script>
+
+</body>
 </html>
